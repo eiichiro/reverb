@@ -52,7 +52,7 @@ import java.util.jar.Attributes.Name;
  * representation. By default, {@link JLCClassResolver} is provided, which 
  * represents the loaded class as {@code java.lang.Class}.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public abstract class ClassResolver<T> {
 
@@ -62,7 +62,7 @@ public abstract class ClassResolver<T> {
 	 * {@code Matcher} indicates whether the specified class matches to some 
 	 * condition or not.
 	 * 
-	 * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+	 * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
 	 */
 	public static interface Matcher<T> {
 		

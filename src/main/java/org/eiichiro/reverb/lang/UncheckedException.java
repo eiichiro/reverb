@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 /**
  * {@code UncheckedException} is an uncheckable wrapper of a checked exception.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class UncheckedException extends RuntimeException {
 

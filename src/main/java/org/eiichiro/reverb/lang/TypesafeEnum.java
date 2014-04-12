@@ -25,7 +25,7 @@ import java.util.Set;
  * {@code TypesafeEnum} is the common base class of inheritable typesafe enum.
  * Unlike {@code java.lang.Enum}, this class can be inherited.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class TypesafeEnum<E extends TypesafeEnum<E>> implements Comparable<E>,
 		Cloneable, Serializable {

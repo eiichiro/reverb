@@ -21,7 +21,7 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * {@code ConstructorInvocation} represents a constructor invocation.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class ConstructorInvocation<T> implements Invocation<T> {
 

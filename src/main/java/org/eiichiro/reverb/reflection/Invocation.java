@@ -18,7 +18,7 @@ package org.eiichiro.reverb.reflection;
 /**
  * {@code Invocation} represents the some program invocation.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public interface Invocation<R> {
 

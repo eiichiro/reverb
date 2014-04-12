@@ -21,7 +21,7 @@ import java.lang.reflect.Method;
 /**
  * {@code MethodInvocation} represents a method invocation.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class MethodInvocation<R> implements Invocation<R> {
 

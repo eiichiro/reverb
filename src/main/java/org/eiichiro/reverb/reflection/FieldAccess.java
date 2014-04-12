@@ -18,7 +18,7 @@ package org.eiichiro.reverb.reflection;
 import java.lang.reflect.Field;
 
 /**
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class FieldAccess<T> implements Access<T> {
 

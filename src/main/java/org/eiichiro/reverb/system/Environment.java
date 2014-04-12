@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * variables are copied from the system at the static initialization and may be 
  * manipulated by applications after the initialization.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class Environment {
 

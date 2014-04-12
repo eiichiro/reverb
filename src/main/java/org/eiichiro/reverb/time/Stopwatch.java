@@ -20,7 +20,7 @@ import static org.eiichiro.reverb.time.Stopwatch.Precision.*;
 import java.io.Serializable;
 
 /**
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class Stopwatch implements Serializable, Cloneable {
 
@@ -29,7 +29,7 @@ public class Stopwatch implements Serializable, Cloneable {
 	/**
 	 * {@code Precision} represents the precision of elapsed time with 4 level.
 	 *
-	 * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+	 * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
 	 */
 	public static enum Precision {
 		
@@ -239,7 +239,7 @@ public class Stopwatch implements Serializable, Cloneable {
 	/**
 	 * {@code SynchronizedStopwatch} wraps and synchronizes {@code Stopwatch}.
 	 *
-	 * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+	 * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
 	 */
 	private static class SynchronizedStopwatch extends Stopwatch {
 		

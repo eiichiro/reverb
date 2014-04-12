@@ -22,7 +22,7 @@ import java.util.Arrays;
 /**
  * Dumps the state of target object.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class Dump {
 

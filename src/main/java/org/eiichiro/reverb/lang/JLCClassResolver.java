@@ -27,7 +27,7 @@ import java.util.Set;
  * This class loads the class as {@code java.lang.Class} directly from the 
  * specified search path.
  * 
- * @author <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>
+ * @author <a href="mailto:mail@eiichiro.org">Eiichiro Uchiumi</a>
  */
 public class JLCClassResolver extends ClassResolver<Class<?>> {
 
