@@ -52,7 +52,7 @@
   			<configuration>
   				<bottom><![CDATA[Copyright © 2009-2012 <a href="mailto:eiichiro@eiichiro.org">Eiichiro Uchiumi</a>. All Rights Reserved.]]></bottom>
   				<doctitle>${project.name} ${project.version} API Specifications</doctitle>
-  				<source>1.6</source>
+  				<source>1.8</source>
   			</configuration>
   		</plugin>
   	</plugins>
