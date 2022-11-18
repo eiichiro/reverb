@@ -3,6 +3,7 @@ package org.eiichiro.reverb.lang;
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.eiichiro.reverb.lang.ClassResolver.Matcher;
+import org.eiichiro.reverb.system.Environment;
 import org.junit.Test;
 
 public class JLCClassResolverTest {
@@ -38,12 +40,19 @@ public class JLCClassResolverTest {
 	@Test
 	public void testResolveByName() throws IOException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		List<URL> paths = new ArrayList<URL>();
 		
-		if (!(classLoader instanceof URLClassLoader)) {
-			fail();
+		if (classLoader instanceof URLClassLoader) {
+			// JDK <=8
+			paths = Arrays.asList(((URLClassLoader) classLoader).getURLs());
+		} else {
+			// JDK >9
+			for (String path : Environment.getProperty("java.class.path").split(File.pathSeparator)) {
+				paths.add(new File(path).toURI().toURL());
+			}
 		}
 		
-		JLCClassResolver resolver = new JLCClassResolver(Arrays.asList(((URLClassLoader) classLoader).getURLs()));
+		JLCClassResolver resolver = new JLCClassResolver(paths);
 		System.out.println(resolver.paths());
 		Set<Class<?>> set = resolver.resolveByName("bject1");
 		assertThat(set.contains(Object1.class), is(true));
@@ -56,12 +65,19 @@ public class JLCClassResolverTest {
 	@Test
 	public void testResolveBySuperclass() throws IOException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		List<URL> paths = new ArrayList<URL>();
 		
-		if (!(classLoader instanceof URLClassLoader)) {
-			fail();
+		if (classLoader instanceof URLClassLoader) {
+			// JDK <=8
+			paths = Arrays.asList(((URLClassLoader) classLoader).getURLs());
+		} else {
+			// JDK >9
+			for (String path : Environment.getProperty("java.class.path").split(File.pathSeparator)) {
+				paths.add(new File(path).toURI().toURL());
+			}
 		}
 		
-		JLCClassResolver resolver = new JLCClassResolver(Arrays.asList(((URLClassLoader) classLoader).getURLs()));
+		JLCClassResolver resolver = new JLCClassResolver(paths);
 		System.out.println(resolver.paths());
 		Set<Class<?>> set = resolver.resolveBySuperclass(Superclass1.class);
 		assertThat(set.contains(Object1.class), is(false));
@@ -74,12 +90,19 @@ public class JLCClassResolverTest {
 	@Test
 	public void testResolveByInterface() throws IOException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		List<URL> paths = new ArrayList<URL>();
 		
-		if (!(classLoader instanceof URLClassLoader)) {
-			fail();
+		if (classLoader instanceof URLClassLoader) {
+			// JDK <=8
+			paths = Arrays.asList(((URLClassLoader) classLoader).getURLs());
+		} else {
+			// JDK >9
+			for (String path : Environment.getProperty("java.class.path").split(File.pathSeparator)) {
+				paths.add(new File(path).toURI().toURL());
+			}
 		}
 		
-		JLCClassResolver resolver = new JLCClassResolver(Arrays.asList(((URLClassLoader) classLoader).getURLs()));
+		JLCClassResolver resolver = new JLCClassResolver(paths);
 		System.out.println(resolver.paths());
 		Set<Class<?>> set = resolver.resolveByInterface(Interface1.class);
 		assertThat(set.contains(Object1.class), is(false));
@@ -92,12 +115,19 @@ public class JLCClassResolverTest {
 	@Test
 	public void testResolveByAnnotation() throws IOException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		List<URL> paths = new ArrayList<URL>();
 		
-		if (!(classLoader instanceof URLClassLoader)) {
-			fail();
+		if (classLoader instanceof URLClassLoader) {
+			// JDK <=8
+			paths = Arrays.asList(((URLClassLoader) classLoader).getURLs());
+		} else {
+			// JDK >9
+			for (String path : Environment.getProperty("java.class.path").split(File.pathSeparator)) {
+				paths.add(new File(path).toURI().toURL());
+			}
 		}
 		
-		JLCClassResolver resolver = new JLCClassResolver(Arrays.asList(((URLClassLoader) classLoader).getURLs()));
+		JLCClassResolver resolver = new JLCClassResolver(paths);
 		System.out.println(resolver.paths());
 		Set<Class<?>> set = resolver.resolveByAnnotation(Annotation1.class);
 		assertThat(set.contains(Object1.class), is(false));
@@ -110,12 +140,19 @@ public class JLCClassResolverTest {
 	@Test
 	public void testResolve() throws IOException, ClassNotFoundException {
 		ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+		List<URL> paths = new ArrayList<URL>();
 		
-		if (!(classLoader instanceof URLClassLoader)) {
-			fail();
+		if (classLoader instanceof URLClassLoader) {
+			// JDK <=8
+			paths = Arrays.asList(((URLClassLoader) classLoader).getURLs());
+		} else {
+			// JDK >9
+			for (String path : Environment.getProperty("java.class.path").split(File.pathSeparator)) {
+				paths.add(new File(path).toURI().toURL());
+			}
 		}
 		
-		JLCClassResolver resolver = new JLCClassResolver(Arrays.asList(((URLClassLoader) classLoader).getURLs()));
+		JLCClassResolver resolver = new JLCClassResolver(paths);
 		System.out.println(resolver.paths());
 		Set<Class<?>> set = resolver.resolve(new Matcher<Class<?>>() {
 			

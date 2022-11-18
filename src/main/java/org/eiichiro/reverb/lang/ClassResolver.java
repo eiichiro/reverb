@@ -172,14 +172,19 @@ public abstract class ClassResolver<T> {
 							while (stringTokenizer.hasMoreTokens()) {
 								String token = stringTokenizer.nextToken();
 								URL entry = new URL(url, token);
-								
-								if (entry.toString().endsWith("/")) {
-//									System.out.println(entry);
-									classes.addAll(getMatchedClasses(matcher, new File(URLDecoder.decode(entry.getPath(), "UTF-8"))));
-								} else {
-//									System.out.println(entry);
-									classes.addAll(getMatchedClasses(matcher, new JarFile(URLDecoder.decode(entry.getPath(), "UTF-8"))));
-								}
+
+								try {
+									if (entry.toString().endsWith("/")) {
+//										System.out.println(entry);
+										classes.addAll(getMatchedClasses(matcher, new File(URLDecoder.decode(entry.getPath(), "UTF-8"))));
+									} else {
+//										System.out.println(entry);
+										classes.addAll(getMatchedClasses(matcher, new JarFile(URLDecoder.decode(entry.getPath(), "UTF-8"))));
+									}
+								} catch (Exception e) {
+									// File does not exist.
+									// e.printStackTrace();
+								}								
 							}
 						}
 					}
